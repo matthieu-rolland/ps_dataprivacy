@@ -56,14 +56,12 @@ class Ps_Dataprivacy extends Module
     {
         return (parent::install()
             && $this->registerHook('additionalCustomerFormFields')
-            && $this->registerHook('actionSubmitAccountBefore')
             && $this->installFixtures());
     }
 
     public function uninstall()
     {
         return ($this->unregisterHook('additionalCustomerFormFields')
-            && $this->unregisterHook('actionBeforeSubmitAccount')
             && parent::uninstall());
     }
 
